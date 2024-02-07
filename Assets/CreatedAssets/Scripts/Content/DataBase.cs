@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class DataBase : MonoBehaviour
 {
-    [SerializeField] static List<Content> allContent = new List<Content>();
-    public static List<Content> AllContent => allContent;
+    [SerializeField] List<Content> allContent = new List<Content>();
+    public List<Content> AllContent => allContent;
 }

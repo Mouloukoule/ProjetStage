@@ -8,6 +8,8 @@ public class ContentText : Content
 {
     [SerializeField] string textToDisplay = "";
     [SerializeField] LocalizedText textToDisplayText;
+
+    public string TextToDisplay => textToDisplay;
 }
 
 [Serializable]

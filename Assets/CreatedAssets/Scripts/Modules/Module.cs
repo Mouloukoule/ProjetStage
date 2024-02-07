@@ -6,69 +6,25 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class Module : MonoBehaviour
+public abstract class Module : MonoBehaviour
 {
     Action<Content> OnContentUpdate;
-    [SerializeField] ARTrackedImageManager trackedImageManager;
+
     [SerializeField] protected Content currentContentToDisplay;
     [SerializeField] protected EContentType typeToDisplay;
     [SerializeField] protected UIModule UIToDisplay;
 
-    private void Awake()
-    {
-        trackedImageManager = GetComponent<ARTrackedImageManager>();
-    }
+    public EContentType TypeToDisplay => typeToDisplay;
+    public Content CurrentContentToDisplay {  get { return currentContentToDisplay; }  set { currentContentToDisplay = value; } }
 
-    void OnEnable()
-    {
-        trackedImageManager.trackedImagesChanged += ManageScan;
-    }
+    public virtual void ManageScan(ARTrackedImagesChangedEventArgs _args) { }
 
-    void OnDisable()
-    {
-        trackedImageManager.trackedImagesChanged -= ManageScan;
-    }
+    public virtual void Execute() { }
 
-    void ManageScan(ARTrackedImagesChangedEventArgs _args)
-    {
-        foreach (ARTrackedImage _trackedImage in _args.added)
-        {
-            if (currentContentToDisplay) continue;
-            currentContentToDisplay = GetRelatedContent(_trackedImage);
-        }
-
-        foreach (ARTrackedImage _trackedImage in _args.updated)
-        {
-
-        }
-
-        foreach (ARTrackedImage _trackedImage in _args.removed)
-        {
-            if (!currentContentToDisplay) continue;
-            currentContentToDisplay = null;
-        }
-    }
-
-    public virtual void Execute()
-    {
-
-    }
-
-    protected void InstantiateUI()
-    {
-
-    }
+    protected virtual void InstantiateUI() { }
 
     Content GetRelatedContent(ARTrackedImage _image)
     {
-        if (DataBase.AllContent.Count < 1) return null;
-        foreach (Content _content in DataBase.AllContent)
-        {
-            if (_image.referenceImage.texture == _content.ImageToDetect)
-            {
-                return _content;
-            }
-        }
         return null;
     }
 }

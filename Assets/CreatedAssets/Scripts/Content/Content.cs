@@ -9,6 +9,7 @@ public abstract class Content : ScriptableObject
     [SerializeField] protected EContentType type = EContentType.None;
 
     public Texture2D ImageToDetect => imageToDetect;
+    public EContentType Type => type;
 }
 
 [Serializable]

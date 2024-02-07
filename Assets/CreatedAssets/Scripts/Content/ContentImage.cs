@@ -7,4 +7,6 @@ using UnityEngine.UI;
 public class ContentImage : Content
 {
     [SerializeField] Image imageToDisplay = null;
+
+    public Image ImageToDisplay => imageToDisplay;
 }

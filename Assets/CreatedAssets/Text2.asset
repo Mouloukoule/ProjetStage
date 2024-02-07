@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b340109e8d98ddd40a77fbe967668c65, type: 3}
+  m_Name: Text2
+  m_EditorClassIdentifier: 
+  imageToDetect: {fileID: 2800000, guid: b450f77ed7e821248b3c8e591e656041, type: 3}
+  type: 2
+  textToDisplay: It's ALIVE
+  textToDisplayText:
+    text: 
+    language: 0
