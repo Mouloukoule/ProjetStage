@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-public class ModuleManager : MonoBehaviour
+public class ModuleManager : Singleton<ModuleManager>
 {
     [SerializeField] List<Module> allModules = new List<Module>();
-    [SerializeField] DataBase db = null;
 
-    public DataBase Db => db;
     public List<Module> AllModules => allModules;
 
     void Start()
     {
-        db = GetComponent<DataBase>();
     }
 
 
@@ -28,7 +25,6 @@ public class ModuleManager : MonoBehaviour
                 _module.Execute();
                 return;
             }
-            
         }
     }
 }

@@ -6,7 +6,8 @@ public class ModuleText : Module
 {
     public override void Execute()
     {
-        ContentText _text = currentContentToDisplay as ContentText;
-        Debug.Log($"text : {_text.TextToDisplay}");
+        ContentText _content = currentContentToDisplay as ContentText;
+        if (!_content) return;
+        Debug.Log($"text : {_content.TextToDisplay}");
     }
 }
