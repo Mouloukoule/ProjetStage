@@ -13,7 +13,6 @@ public abstract class Module : MonoBehaviour
     [SerializeField] protected Content currentContentToDisplay;
     [SerializeField] protected EContentType typeToDisplay;
     [SerializeField] protected UIModule UIToDisplay;
-    [SerializeField] protected ModuleManager moduleManager = null;
 
     public EContentType TypeToDisplay => typeToDisplay;
     public Content CurrentContentToDisplay {  get { return currentContentToDisplay; }  set { currentContentToDisplay = value; } }
@@ -26,19 +25,13 @@ public abstract class Module : MonoBehaviour
 
     void Init()
     {
-        moduleManager = ModuleManager.Instance;
-        if (!moduleManager) return;
-        moduleManager.AllModules.Add(this);
+        if (!ModuleManager.Instance) return;
+        ModuleManager.Instance.AllModules.Add(this);
     }
+
 
     public virtual void Execute() { }
 
     protected virtual void InstantiateUI() { }
 
-    //public virtual void ManageScan(ARTrackedImagesChangedEventArgs _args) { }
-
-    //Content GetRelatedContent(ARTrackedImage _image)
-    //{
-    //    return null;
-    //}
 }

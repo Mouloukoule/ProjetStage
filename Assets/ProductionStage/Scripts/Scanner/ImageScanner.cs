@@ -5,7 +5,6 @@ using UnityEngine.XR.ARFoundation;
 
 public class ImageScanner : MonoBehaviour
 {
-    [SerializeField] ModuleManager moduleManager = null;
     [SerializeField] ARTrackedImageManager trackedImageManager = null;
 
     private void Awake()
@@ -16,7 +15,6 @@ public class ImageScanner : MonoBehaviour
     void Init()
     {
         trackedImageManager = GetComponent<ARTrackedImageManager>();
-        moduleManager = ModuleManager.Instance;
     }
 
     void OnEnable()
@@ -32,9 +30,13 @@ public class ImageScanner : MonoBehaviour
         trackedImageManager.trackedImagesChanged -= SendContentToManager;
     }
 
+    /// <summary>
+    /// Gets content from image from DataBase and sends it to the Module Manager
+    /// </summary>
+    /// <param name="_args"></param>
     void SendContentToManager(ARTrackedImagesChangedEventArgs _args)
     {
-        if (!moduleManager) return;
+        if (!ModuleManager.Instance) return;
 
         foreach (ARTrackedImage _image in _args.added)
         {
@@ -42,7 +44,7 @@ public class ImageScanner : MonoBehaviour
 
             Content _relatedContent = DataBase.Instance.GetRelatedContent(_image);
             if (!_relatedContent) continue;
-            moduleManager.Execute(_relatedContent);
+            ModuleManager.Instance.Execute(_relatedContent);
             return;
         }
 

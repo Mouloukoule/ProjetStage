@@ -7,7 +7,7 @@ using UnityEngine;
 public class ContentText : Content
 {
     [SerializeField] string textToDisplay = "";
-    [SerializeField] LocalizedText textToDisplayText;
+    [SerializeField] List<LocalizedText> allTexts;
 
     public string TextToDisplay => textToDisplay;
 }
@@ -22,6 +22,7 @@ public struct LocalizedText
 [Serializable]
 public enum ELanguage
 {
+    None,
     English,
     French,
     Spanish,

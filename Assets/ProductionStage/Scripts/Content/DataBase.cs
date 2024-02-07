@@ -11,12 +11,17 @@ public class DataBase : Singleton<DataBase>
 
     void Start()
     {
-        GetAllContentFromFile();
+        GetAllContentFromFolder(path);
     }
 
-    void GetAllContentFromFile()
+    /// <summary>
+    /// 
+    /// Gets all content from folder located at specified path
+    /// </summary>
+    /// <param name="_path"> Path of the folder to get content from, starting at Resources </param>
+    void GetAllContentFromFolder(string _path)
     {
-        contents = Resources.LoadAll(path, typeof(Content));
+        contents = Resources.LoadAll(_path, typeof(Content));
         foreach (Object _item in contents) 
         {
             Content _content = (Content)_item;
@@ -25,6 +30,11 @@ public class DataBase : Singleton<DataBase>
         }
     }
 
+    /// <summary>
+    /// Returns content associated with incoming image
+    /// </summary>
+    /// <param name="_image"> Image to get content from </param>
+    /// <returns></returns>
     public Content GetRelatedContent(ARTrackedImage _image)
     {
         foreach (Content _content in allContent) 
