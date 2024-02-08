@@ -6,8 +6,10 @@ public class ModuleVideo : Module
 {
     public override void Execute()
     {
+        //Casts the content sent by the manager as the type the module handles
         ContentVideo _content = currentContentToDisplay as ContentVideo;
         if (!_content) return;
-        Debug.Log($"Video : {_content.name}");
+        //Acts accordingly
+        CustomDebug.DebugText($"Video : {_content.name}");
     }
 }

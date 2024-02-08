@@ -8,8 +8,6 @@ using UnityEngine.XR.ARSubsystems;
 
 public abstract class Module : MonoBehaviour
 {
-    Action<Content> OnContentUpdate;
-
     [SerializeField] protected Content currentContentToDisplay;
     [SerializeField] protected EContentType typeToDisplay;
     [SerializeField] protected UIModule UIToDisplay;
@@ -29,7 +27,9 @@ public abstract class Module : MonoBehaviour
         ModuleManager.Instance.AllModules.Add(this);
     }
 
-
+    /// <summary>
+    /// The Module execute the defined task according to its type
+    /// </summary>
     public virtual void Execute() { }
 
     protected virtual void InstantiateUI() { }
