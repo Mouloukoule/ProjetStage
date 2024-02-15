@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CustomDebug : MonoBehaviour
 {
-    public static void DebugText(string _text)
+    public static void DebugText(bool _value, string _text)
     {
+        if (!_value) return;
         Debug.Log(_text);
     }
 }

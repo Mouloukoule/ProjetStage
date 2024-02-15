@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageToDetect: {fileID: 2800000, guid: 5cf46ffd36b63cf48ab6253385ff4de7, type: 3}
   type: 2
-  textToDisplay: This is a sample text
-  textToDisplayText:
-    text: 
-    language: 0
+  textToDisplay: 
+  allTexts:
+  - text: This is an example
+    language: 1
+  - text: C'est un exemple
+    language: 2
+  - text: Eso es un ejemplo
+    language: 3
+  - text: Dies ist ein Beispiel
+    language: 4

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ModuleImage : Module
 {
-    public override void Execute()
+    public override void Execute(Transform _transform)
     {
         //Casts the content sent by the manager as the type the module handles
         ContentImage _content = currentContentToDisplay as ContentImage;
         if(!_content) return;
         //Acts accordingly
-        CustomDebug.DebugText($"Image : {_content.ImageToDisplay.name}");
+        InstantiateUI(_transform);
     }
 }

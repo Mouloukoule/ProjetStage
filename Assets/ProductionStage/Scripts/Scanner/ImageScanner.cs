@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 public class ImageScanner : MonoBehaviour
 {
@@ -38,17 +39,28 @@ public class ImageScanner : MonoBehaviour
     void SendContentToManager(ARTrackedImagesChangedEventArgs _args)
     {
         if (!ModuleManager.Instance) return;
+        
 
         foreach (ARTrackedImage _image in _args.added)
         {
+
             if (!DataBase.Instance) return;
             //Asks DataBase if there is Content associated with this image
             Content _relatedContent = DataBase.Instance.GetRelatedContent(_image);
             if (!_relatedContent) continue;
+
             //if there is, sends it to the Module Manager
-            ModuleManager.Instance.Execute(_relatedContent);
+            ModuleManager.Instance.Execute(_relatedContent, _image.transform);
             return;
         }
 
+        foreach (ARTrackedImage _image in _args.updated)
+        {
+            if (_image.trackingState == TrackingState.Limited)
+                _image.gameObject.SetActive(false);
+            if (_image.trackingState == TrackingState.Tracking)
+                _image.gameObject.SetActive(true);
+
+        }
     }
 }

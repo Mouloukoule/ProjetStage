@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Image Asset", menuName = "Content/Image")]
 public class ContentImage : Content
 {
-    [SerializeField] Image imageToDisplay = null;
+    [SerializeField] Texture2D imageToDisplay = null;
 
-    public Image ImageToDisplay => imageToDisplay;
+    public Texture2D ImageToDisplay => imageToDisplay;
 }
