@@ -30,23 +30,4 @@ public class ModuleManager : Singleton<ModuleManager>
             }
         }
     }
-
-    public void UpdateUIVisibility(Content _content, bool _value)
-    {
-        int _opacity = _value ? 1 : 0;
-
-        foreach (Module _module in allModules)
-        {
-            if (!_module) continue;
-            if (_module.TypeToDisplay == _content.Type)
-            {
-                if(_module.CurrentContentToDisplay == _content)
-                {
-                    if (!_module.CurrentUI.CanvasGroupRef) return;
-
-                    _module.CurrentUI.CanvasGroupRef.alpha = _opacity;
-                }
-            }
-        }
-    }
 }

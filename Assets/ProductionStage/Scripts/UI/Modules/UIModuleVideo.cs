@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class UIModuleVideo : UIModule
     [SerializeField] StopButton stopButton;
     [SerializeField] Sprite playImage;
     [SerializeField] Sprite pauseImage;
-    [SerializeField, Range(0,10)] int volume;
+    [SerializeField, Range(1,10)] int volume = 1;
 
     public override void Init(Content _content)
     {
@@ -38,7 +39,7 @@ public class UIModuleVideo : UIModule
         videoPlayer.clip = _contentVideo.VideoToDisplay;
         if (!videoPlayer.clip) return;
         videoPlayer.Play();
-        videoPlayer.SetDirectAudioVolume(0, volume / 10);
+        videoPlayer.SetDirectAudioVolume(0, .1f);
     }
 
     /// <summary>
@@ -46,7 +47,7 @@ public class UIModuleVideo : UIModule
     /// </summary>
     void SwitchPlay()
     {
-        if(videoPlayer.isPaused)
+        if(!videoPlayer.isPlaying)
         {
             videoPlayer.Play();
             ChangeButtonAppearance(playButton.ImageRef, pauseImage);
@@ -55,7 +56,6 @@ public class UIModuleVideo : UIModule
         videoPlayer.Pause();
         ChangeButtonAppearance(playButton.ImageRef, playImage);
     }
-
 
     /// <summary>
     /// Changes the Image's Sprite to display
@@ -66,5 +66,10 @@ public class UIModuleVideo : UIModule
     {
         if (!_support || !_imageToDisplay) return;
         _support.sprite = _imageToDisplay;
+    }
+
+    void OnDisable()
+    {
+        texture.Release();
     }
 }

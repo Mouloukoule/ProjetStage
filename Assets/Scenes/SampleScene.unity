@@ -3108,7 +3108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &842160064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6221,7 +6221,7 @@ Transform:
   m_GameObject: {fileID: 1376911555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9528,7 +9528,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 2108386251}
   m_CameraFloorOffsetObject: {fileID: 1376911555}
   m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 1.1176
+  m_CameraYOffset: 0
 --- !u!4 &2108386254
 Transform:
   m_ObjectHideFlags: 0
@@ -9560,7 +9560,8 @@ MonoBehaviour:
   m_SerializedLibrary: {fileID: 11400000, guid: 42401e72a32ee8347b6596d20c4ebf1b,
     type: 2}
   m_MaxNumberOfMovingImages: 4
-  m_TrackedImagePrefab: {fileID: 0}
+  m_TrackedImagePrefab: {fileID: 2074845574988749283, guid: 6427928043e2de14eb3e43389ea7aa32,
+    type: 3}
 --- !u!114 &2108386258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9578,7 +9579,6 @@ MonoBehaviour:
   UIToDisplay: {fileID: 3822116538483979754, guid: 9f005ea40f00a4d4fbb5f64edd31f5f6,
     type: 3}
   currentUI: {fileID: 0}
-  useDebug: 1
 --- !u!114 &2108386259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9596,7 +9596,6 @@ MonoBehaviour:
   UIToDisplay: {fileID: 4336972466471970149, guid: a5aa8fea915265748aa0142a16618266,
     type: 3}
   currentUI: {fileID: 0}
-  useDebug: 1
 --- !u!114 &2108386260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9614,7 +9613,6 @@ MonoBehaviour:
   UIToDisplay: {fileID: 616449773465828673, guid: 1f5f6d71a360d534eada1c8799bb8922,
     type: 3}
   currentUI: {fileID: 0}
-  useDebug: 1
 --- !u!114 &2108386262
 MonoBehaviour:
   m_ObjectHideFlags: 0

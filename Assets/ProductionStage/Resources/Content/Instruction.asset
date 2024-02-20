@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b340109e8d98ddd40a77fbe967668c65, type: 3}
+  m_Name: Instruction
+  m_EditorClassIdentifier: 
+  imageToDetect: {fileID: 2800000, guid: 886e39b8df1a2ff4a91ba45882f50439, type: 3}
+  type: 2
+  textToDisplay: 
+  allTexts:
+  - text: 'This is the scroll of truth, it only speaks of truth. Try to lie to it
+      and face the consequences, as horrible they may be. Keep on reading if you
+      are not afraid , or fool enough to not feel fear, of truth in the purest of
+      form : brutal and cruel. '
+    language: 1
+  - text: "Ceci est le parchemin de v\xE9rit\xE9, il ne dit que la v\xE9rit\xE9.
+      Essayez de lui mentir et faites face aux cons\xE9quences, aussi horribles puissent-elles
+      \xEAtre. Continuez \xE0 lire si vous n'avez pas peur, ou si vous \xEAtes idiot
+      au point de ne pas avoir peur, de la v\xE9rit\xE9 dans sa forme la plus pure
+      : brutale et cruelle."
+    language: 2
+  - text: "Este es el rollo de la verdad, s\xF3lo habla de la verdad. Intenta mentirle
+      y afrontar las consecuencias, por horribles que sean. Sigue leyendo si no tienes
+      miedo, o eres lo suficientemente tonto como para no sentir miedo, a la verdad
+      en su forma m\xE1s pura: brutal y cruel."
+    language: 3
+  - text: "Dies ist die Schriftrolle der Wahrheit, sie spricht nur von der Wahrheit.
+      Versuchen Sie, es anzul\xFCgen und sich den Konsequenzen zu stellen, so schrecklich
+      sie auch sein m\xF6gen. Lesen Sie weiter, wenn Sie keine Angst haben oder dumm
+      genug sind, keine Angst vor der Wahrheit in ihrer reinsten Form zu empfinden:
+      brutal und grausam."
+    language: 4

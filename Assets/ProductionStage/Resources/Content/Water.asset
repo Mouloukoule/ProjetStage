@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ca59085b8797244ab769de6a8fbed8, type: 3}
-  m_Name: Image Asset
+  m_Script: {fileID: 11500000, guid: 7c19996c96cb8314da820d72be6a13ae, type: 3}
+  m_Name: Water
   m_EditorClassIdentifier: 
-  imageToDetect: {fileID: 2800000, guid: 451826a1ad0e05e4c967079c6d403e9e, type: 3}
-  type: 1
-  imageToDisplay: {fileID: 2800000, guid: 161744ba6a774374782c3e1b6ae0e108, type: 3}
+  imageToDetect: {fileID: 2800000, guid: a1f885a722ba52748bf59edae3249633, type: 3}
+  type: 3
+  videoToDisplay: {fileID: 32900000, guid: a00f7b1f9beb0ee4a8316999e6ebc4a5, type: 3}

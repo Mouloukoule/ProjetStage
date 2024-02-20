@@ -49,3 +49,33 @@ MonoBehaviour:
     m_SpecifySize: 0
     m_Name: Farquaad
     m_Texture: {fileID: 2800000, guid: 816e3e85f8a0dcb41a5622121ced49f2, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4838847351133495273
+      m_GuidHigh: 16736064106176366495
+    m_SerializedTextureGuid:
+      m_GuidLow: 5941411993385207207
+      m_GuidHigh: 3717199103484949899
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: patrick
+    m_Texture: {fileID: 2800000, guid: a1f885a722ba52748bf59edae3249633, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5453154369022103003
+      m_GuidHigh: 15104484560644075677
+    m_SerializedTextureGuid:
+      m_GuidLow: 15880882995292870417
+      m_GuidHigh: 10898789123229557866
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: potte
+    m_Texture: {fileID: 2800000, guid: 95f917113af1dc646a24fd9bf6464097, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5586761937112640067
+      m_GuidHigh: 13606731109983079052
+    m_SerializedTextureGuid:
+      m_GuidLow: 3455632119151081912
+      m_GuidHigh: 4108678700250438569
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: scroll
+    m_Texture: {fileID: 2800000, guid: 886e39b8df1a2ff4a91ba45882f50439, type: 3}

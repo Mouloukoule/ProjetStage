@@ -44,7 +44,7 @@ public abstract class Module : MonoBehaviour
         currentUI = Instantiate(UIToDisplay);
         if (!currentUI) return;
         currentUI.transform.SetParent(_transform);
-        currentUI.transform.localPosition = new Vector3(0, 0, 1);
+        currentUI.transform.localPosition = new Vector3(0, 0, 0);
         currentUI.ModuleRef = this;
         currentUI.SetVisibility(true);
         currentUI.Init(CurrentContentToDisplay);

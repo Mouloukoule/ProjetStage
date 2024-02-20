@@ -61,35 +61,37 @@ public class ImageScanner : Singleton<ImageScanner>
             //Debug.Log($"{_image.name} is tracked: {_isImageTracked}");
             //ModuleManager.Instance.UpdateUIVisibility(_relatedContent, _isImageTracked);
 
-            if (_image.trackingState == TrackingState.Tracking || _image.trackingState == TrackingState.Limited)
-            {
-                if (!_image) continue;
-                UIModule _uimodule = _image.transform.GetComponentInChildren<UIModule>();
-                Debug.Log("Image Valid");
-                if(!_uimodule) continue;
-                Debug.Log("ui module Valid");
-                _uimodule.gameObject.SetActive(true);
 
-                //_image.gameObject.SetActive(true);
+            if (_image.trackingState == TrackingState.Tracking)
+            {
+                //if (!_image) continue;
+                //UIModule _uimodule = _image.transform.GetComponentInChildren<UIModule>();
+                //Debug.Log("Image Valid");
+                //if (!_uimodule) continue;
+                //Debug.Log("ui module Valid");
+                //_uimodule.gameObject.SetActive(true);
+
                 Debug.Log("Tracked");
+                _image.gameObject.SetActive(true);
             }
+
             else
             {
-                if (!_image) continue;
-                UIModule _uimodule = _image.transform.GetComponentInChildren<UIModule>();
-                Debug.Log(" Not tracked Image Valid");
-                if (!_uimodule) continue;
-                Debug.Log("Not tracked ui module Valid");
-                _uimodule.gameObject.SetActive(false);
+                //if (!_image) continue;
+                //UIModule _uimodule = _image.transform.GetComponentInChildren<UIModule>();
+                //Debug.Log(" Not tracked Image Valid");
+                //if (!_uimodule) continue;
+                //Debug.Log("Not tracked ui module Valid");
+                //_uimodule.gameObject.SetActive(false);
 
-                //_image.gameObject.SetActive(false);
-                //Debug.Log("Not Tracked ");
+                _image.gameObject.SetActive(false);
+                Debug.Log("Not Tracked ");
             }
         }
 
-        foreach (ARTrackedImage _image in _args.removed)
-        {
-            Debug.Log("Removed called");
-        }
+        //foreach (ARTrackedImage _image in _args.removed)
+        //{
+        //    Debug.Log("Removed called");
+        //}
     }
 }

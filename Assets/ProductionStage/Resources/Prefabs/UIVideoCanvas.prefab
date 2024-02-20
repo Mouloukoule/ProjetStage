@@ -482,6 +482,7 @@ MonoBehaviour:
   cameraRef: {fileID: 0}
   contentToDisplay: {fileID: 0}
   moduleRef: {fileID: 0}
+  canvasGroupRef: {fileID: 0}
   videoPlayer: {fileID: 0}
   texture: {fileID: 0}
   playButton: {fileID: 0}
