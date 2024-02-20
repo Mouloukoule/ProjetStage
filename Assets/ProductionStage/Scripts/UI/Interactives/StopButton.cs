@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StopButton : MonoBehaviour
+public class StopButton : CustomButton
 {
-    [SerializeField] Button button;
+    [SerializeField] Image image;
 
-    public Button ButtonRef => button;
+    public Image ImageRef => image;
 
-    public void Init()
+    public override void Init()
     {
-        button = GetComponent<Button>();
-        //Debug.Log("got buttonRef");
+        base.Init();
+        image = GetComponent<Image>();
     }
 }

@@ -4,18 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayButton : MonoBehaviour
+public class PlayButton : CustomButton
 {
-    [SerializeField] Button button;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Image image;
 
-    public Button ButtonRef => button;
-    public TextMeshProUGUI Text => text;
+    public Image ImageRef => image;
 
-    public void Init()
+    public override void Init()
     {
-        button = GetComponent<Button>();
-        text = GetComponentInChildren<TextMeshProUGUI>();
-        //Debug.Log("got buttonRef");
+        base.Init();
+        image = GetComponent<Image>();
     }
 }

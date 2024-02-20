@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.ARFoundation;
 
 public class ModuleManager : Singleton<ModuleManager>
@@ -26,6 +27,25 @@ public class ModuleManager : Singleton<ModuleManager>
                 //and asks for it to execute its task
                 _module.Execute(_transform);
                 return;
+            }
+        }
+    }
+
+    public void UpdateUIVisibility(Content _content, bool _value)
+    {
+        int _opacity = _value ? 1 : 0;
+
+        foreach (Module _module in allModules)
+        {
+            if (!_module) continue;
+            if (_module.TypeToDisplay == _content.Type)
+            {
+                if(_module.CurrentContentToDisplay == _content)
+                {
+                    if (!_module.CurrentUI.CanvasGroupRef) return;
+
+                    _module.CurrentUI.CanvasGroupRef.alpha = _opacity;
+                }
             }
         }
     }

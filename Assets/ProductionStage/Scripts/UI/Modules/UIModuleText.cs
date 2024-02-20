@@ -30,6 +30,18 @@ public class UIModuleText : UIModule
         
     }
 
+    /// <summary>
+    /// Gets all LanguageSwapButtons in children
+    /// </summary>
+    void GetAllButtons()
+    {
+        allButtons = GetComponentsInChildren<LanguageSwapButton>().ToList();
+        //Debug.Log("got all buttons");
+    }
+
+    /// <summary>
+    /// Subscribes the SetLanguage function to each  button, using the button's language as parameter
+    /// </summary>
     void SubscribeToButtons()
     {
         foreach(LanguageSwapButton _button in allButtons) 
@@ -42,12 +54,10 @@ public class UIModuleText : UIModule
         }
     }
 
-    void GetAllButtons()
-    {
-        allButtons = GetComponentsInChildren<LanguageSwapButton>().ToList();
-        //Debug.Log("got all buttons");
-    }
-
+    /// <summary>
+    /// Changes current language to target language
+    /// </summary>
+    /// <param name="_language"> target language </param>
     public void SetLanguage(ELanguage _language)
     {
         currentLanguage = _language;
@@ -55,18 +65,25 @@ public class UIModuleText : UIModule
         GetNewText(currentLanguage);
     }
 
+    /// <summary>
+    /// Checks if the language exists in the buttons and changes text accordingly
+    /// </summary>
+    /// <param name="_language"></param>
     public void GetNewText(ELanguage _language)
     {
         foreach (LanguageSwapButton _button in allButtons)
         {
             if (_language == _button.Language)
             {
-                //Debug.Log("Got new text");
                 ChangeText(_language);
             }
         }
     }
 
+    /// <summary>
+    /// Gets the text with the same language in the ContentText and uses it to display
+    /// </summary>
+    /// <param name="_language"></param>
     public void ChangeText(ELanguage _language)
     {
         if (!moduleRef || !contentToDisplay) return;
@@ -76,7 +93,6 @@ public class UIModuleText : UIModule
             if(_language == _text.Language)
             {
                 textToDisplay.text = _text.Text;
-                //Debug.Log("text changed to" + _text.Text);
                 return;
             }
         }
